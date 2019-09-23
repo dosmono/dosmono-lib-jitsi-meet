@@ -1033,18 +1033,15 @@ class RTCUtils extends Listenable {
 
         const requestingDesktop = options.devices.includes('desktop');
 
-<<<<<<< HEAD
         // if (requestingDesktop && !screenObtainer.isSupported()) {
         //     return Promise.reject(
         //         new Error('Desktop sharing is not supported!'));
         // }
         logger.info("obtainAudioAndVideoPermissions");
-=======
         if (requestingDesktop && !screenObtainer.isSupported()) {
             return Promise.reject(
                 new Error('Desktop sharing is not supported!'));
         }
->>>>>>> f43c0c4bbfeb09ed816356eb5088bd61d40b91d5
 
         return this._getAudioAndVideoStreams(options).then(streams =>
             handleLocalStream(streams, options.resolution));
